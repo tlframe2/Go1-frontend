@@ -1,8 +1,9 @@
 import './App.css';
+import EventsOverview from './components/EventsOverview';
 
 function App() {
   return (
-    <h1>Hello World</h1>
+    <EventsOverview />
   );
 }
 
