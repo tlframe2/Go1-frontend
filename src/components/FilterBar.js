@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * Displays bar with fields that can be used to filter events based on title and date
+ * @param {func} changeTitle - updates filter for title
+ * @param {func} changeDate - updates filter for date
+ */
 const FilterBar = ({ changeTitle, changeDate }) => {
   return (
     <div className="filter-container">

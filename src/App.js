@@ -4,6 +4,11 @@ import EventDetails from './components/EventDetails';
 
 import './App.css';
 
+/** 
+ * Root of application. Handles routing.
+ * @route "/" - displays filter and event previews
+ * @route "/details" - displays details of clicked on event
+ */
 function App() {
   return (
     <Router>

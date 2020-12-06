@@ -164,18 +164,3 @@ test('renders event properties', () => {
   expect(screen.getByText("Infection Prevention and Control (Australia)")).toBeInTheDocument();
   expect(screen.getByText("2021-03-22T02:30:00.000Z")).toBeInTheDocument();
 });
-
-// test('app renders correctly', () => {
-//   const history = createMemoryHistory();
-
-//   render(
-//     <Router history={history}>
-//       <App />
-//     </Router>
-//   );
-
-//   expect(screen.getByText("Infection Prevention and Control (Australia)")).toBeInTheDocument();
-//   expect(screen.getByText("2021-03-22T02:30:00.000Z")).toBeInTheDocument();
-//   expect(screen.getByText("Wellbeing First - Mindfulness")).toBeInTheDocument();
-//   expect(screen.getByText("2021-03-24T02:30:00.000Z")).toBeInTheDocument();
-// })

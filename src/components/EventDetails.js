@@ -1,15 +1,20 @@
 import React from 'react';
 import { Redirect, useLocation } from "react-router-dom";
 
+/**
+ * Displays details of event on full page
+ */
 const EventDetails = () => {
   const location = useLocation();
 
+  // Checks if user got here by clicking event title, otherwise redirects them back to home
   if (location.state) {
     let { title, time, image, eventLocation: { City, State, Country}, seats } = location.state;
     let seatsArr = [];
     let seatsStr = "";
     let locationStr = `${City}, ${State}, ${Country}`;
 
+    // If event has available seats listed, joins them as string
     if (seats) {
       seatsArr = seats.map(seat => seat.id);
       seatsStr = seatsArr.join(", ");
@@ -26,6 +31,7 @@ const EventDetails = () => {
             <li className="subtitle">Where</li>
             <li className="detail">{locationStr}</li>
             {
+              // Section only appears if event has seats listed
               seats && 
                 <>
                   <li className="subtitle">Seats</li>
