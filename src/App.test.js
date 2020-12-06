@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
+import EventsOverview from './components/EventsOverview';
 import Event from './components/Event';
 
 const testEvent = {
@@ -21,12 +22,16 @@ const testEvent = {
   ]
 }
 
+test('renders list of events', () => {
+  render(<EventsOverview />);
+  expect(screen.getByText("Infection Prevention and Control (Australia)")).toBeInTheDocument();
+  expect(screen.getByText("2021-03-22T02:30:00.000Z")).toBeInTheDocument();
+  expect(screen.getByText("Wellbeing First - Mindfulness")).toBeInTheDocument();
+  expect(screen.getByText("2021-03-24T02:30:00.000Z")).toBeInTheDocument();
+});
+
 test('renders event properties', () => {
   render(<Event title={testEvent.Title} time={testEvent.Time} location={testEvent.Location} seats={testEvent.AvailableSeats} />);
   expect(screen.getByText("Wellbeing First - Mindfulness")).toBeInTheDocument();
   expect(screen.getByText("2021-03-24T02:30:00.000Z")).toBeInTheDocument();
-  expect(screen.getByText("Cairns")).toBeInTheDocument();
-  expect(screen.getByText("Queensland")).toBeInTheDocument();
-  expect(screen.getByText("Australia")).toBeInTheDocument();
-  expect(screen.getByText("W25, B29")).toBeInTheDocument();
 });
