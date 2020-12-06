@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Event from './Event';
 import axios from 'axios';
+import dateFormatter from '../utilities/dateFormatter';
 
 const EventsOverview = () => {
   const [events, setEvents] = useState([]);
@@ -22,7 +23,14 @@ const EventsOverview = () => {
         ) : (
           events.map((event, index) => (
             <div>
-              <Event title={event.Title} time={event.Time} image={event.Image} eventLocation={event.Location} seats={event.AvailableSeats} key={index} data-testid="event" />
+              <Event 
+                title={event.Title} 
+                time={dateFormatter(event.Time)} 
+                image={event.Image} 
+                eventLocation={event.Location} 
+                seats={event.AvailableSeats} 
+                key={index} 
+              />
             </div>
           ))
         )
