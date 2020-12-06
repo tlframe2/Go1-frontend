@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Event from './Event';
 
 const EventsOverview = () => {
   const [events, setEvents] = useState({
@@ -21,10 +22,8 @@ const EventsOverview = () => {
   });
 
   return (
-    <ul>
-      <li>{events.Title}</li>
-    </ul>
-  )
+    <Event title={events.Title} time={events.Time} image={events.Image} location={events.Location} seats={events.AvailableSeats} />
+  );
 }
 
 export default EventsOverview;
