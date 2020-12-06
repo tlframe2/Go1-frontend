@@ -9,10 +9,13 @@ const Events = props => {
   }
 
   return (
-    <ul>
-      <li onClick={showDetails}>{props.title}</li>
-      <li>{props.time}</li>
-    </ul>
+    <div className="event-container">
+      <img src={props.image} className="event-img-small" />
+      <ul>
+        <li onClick={showDetails} className="title">{props.title}</li>
+        <li className="date">{props.time}</li>
+      </ul>
+    </div>
   )
 }
 

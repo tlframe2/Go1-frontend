@@ -5,9 +5,10 @@ const EventDetails = () => {
   const location = useLocation();
 
   if (location.state) {
-    let { title, time, image, eventLocation, seats } = location.state;
+    let { title, time, image, eventLocation: { City, State, Country}, seats } = location.state;
     let seatsArr = [];
     let seatsStr = "";
+    let locationStr = `${City}, ${State}, ${Country}`;
 
     if (seats) {
       seatsArr = seats.map(seat => seat.id);
@@ -15,19 +16,25 @@ const EventDetails = () => {
     }
 
     return (
-      <ul>
-        <li>{title}</li>
-        <li>{time}</li>
-        <li>Location</li>
-        <ul>
-          <li>{eventLocation.City}</li>
-          <li>{eventLocation.State}</li>
-          <li>{eventLocation.Country}</li>
-        </ul>
-        {
-          seats && <li>{seatsStr}</li>
-        }
-      </ul>
+      <div className="details-page-container">
+        <div className="details-container">
+          <img src={image} className="event-img-large" />
+          <ul>
+            <li className="title">{title}</li>
+            <li className="subtitle">When</li>
+            <li className="detail">{time}</li>
+            <li className="subtitle">Where</li>
+            <li className="detail">{locationStr}</li>
+            {
+              seats && 
+                <>
+                  <li className="subtitle">Seats</li>
+                  <li className="detail">{seatsStr}</li>
+                </>
+            }
+          </ul>
+        </div>
+      </div>
     );
   } else {
     return <Redirect to="/" />
