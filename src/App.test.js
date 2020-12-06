@@ -7,8 +7,13 @@ import App from './App';
 //   expect(greeting).toBeInTheDocument();
 // });
 
-test('renders Events', () => {
+// test('renders Events', () => {
+//   render(<App />);
+//   const events = screen.getByText(/events/i);
+//   expect(events).toBeInTheDocument();
+// });
+
+test('renders event title', () => {
   render(<App />);
-  const events = screen.getByText(/events/i);
-  expect(events).toBeInTheDocument();
+  expect(screen.getByText("Wellbeing First - Mindfulness")).toBeInTheDocument();
 });
