@@ -38,7 +38,7 @@ const EventsOverview = () => {
       {
         events.map((event, index) => (
           <div>
-            <Event title={event.Title} time={event.Time} image={event.Image} location={event.Location} seats={event.AvailableSeats} key={index} />
+            <Event title={event.Title} time={event.Time} image={event.Image} eventLocation={event.Location} seats={event.AvailableSeats} key={index} />
           </div>
         ))
       }

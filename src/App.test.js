@@ -31,7 +31,7 @@ test('renders list of events', () => {
 });
 
 test('renders event properties', () => {
-  render(<Event title={testEvent.Title} time={testEvent.Time} location={testEvent.Location} seats={testEvent.AvailableSeats} />);
+  render(<Event title={testEvent.Title} time={testEvent.Time} eventLocation={testEvent.Location} seats={testEvent.AvailableSeats} />);
   expect(screen.getByText("Wellbeing First - Mindfulness")).toBeInTheDocument();
   expect(screen.getByText("2021-03-24T02:30:00.000Z")).toBeInTheDocument();
 });
