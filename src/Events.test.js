@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, waitFor, cleanup, screen } from '@testing-library/react';
+import { render, waitFor, cleanup, screen, fireEvent } from '@testing-library/react';
 import App from './App';
 import Event from './components/Event';
 import mockedAxios from 'axios';
@@ -150,7 +150,7 @@ test('mocks axios request and renders events', async () => {
 
   mockedAxios.get.mockResolvedValueOnce(data);
 
-  render(<App />);
+  const { debug, getByPlaceholderText } = render(<App />);
 
   await waitFor(() => {
     expect(screen.getByText("Infection Prevention and Control (Australia)")).toBeInTheDocument();
