@@ -17,7 +17,7 @@ const Events = props => {
   // Keeps it simple by just showing tiny image, title, and date
   return (
     <div className="event-container" data-testid="EventTile">
-      <img src={props.image} className="event-img-small" />
+      <img src={props.image} className="event-img-small" alt="" />
       <ul>
         <li onClick={showDetails} className="title">{props.title}</li>
         <li className="date">{props.time}</li>

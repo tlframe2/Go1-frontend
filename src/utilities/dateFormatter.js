@@ -7,6 +7,7 @@ const splitDate = dateStr => dateStr.split('-');
 // Formats date and time into a more readable format. Ex: 2021-03-24 becomes Mar 24, 2021
 const dateFormatter = datetimeStr => {
   let [date, timeAndTimezone] = splitDatetime(datetimeStr);
+  // eslint-disable-next-line
   let [time, timezone] = splitTimezone(timeAndTimezone)
   let [year, month, day] = splitDate(date);
   let monthsIndex = parseInt(month) - 1;

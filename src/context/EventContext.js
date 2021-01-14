@@ -26,12 +26,14 @@ const EventContextProvider = props => {
   useEffect(() => {
     const filteredByTitle = allEvents.filter(event => event.Title.toLowerCase().search(titleFilter.toLowerCase()) !== -1);
     setFilteredEvents(filteredByTitle);
+    // eslint-disable-next-line
   }, [titleFilter]);
 
   // Filters events by date as user types in input
   useEffect(() => {
     const filteredByDate = allEvents.filter(event => event.Time.search(dateFilter) !== -1);
     setFilteredEvents(filteredByDate);
+    // eslint-disable-next-line
   }, [dateFilter]);
 
   // Updates state of title filter

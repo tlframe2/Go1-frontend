@@ -23,7 +23,7 @@ const EventDetails = () => {
     return (
       <div className="details-page-container">
         <div className="details-container">
-          <img src={image} className="event-img-large" />
+          <img src={image} className="event-img-large" alt=""/>
           <ul>
             <li className="title">{title}</li>
             <li className="subtitle">When</li>
